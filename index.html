@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +12,16 @@
             overflow: hidden;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #80ed99;
+            
+	background: #80ed99;
             color: #00ff00; /* Matrix text color */
         }
         .login-container {
             background: #fff;
+	    
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -25,6 +29,7 @@
             width: 320px;
             position: relative;
             z-index: 1;
+	    margin-bottom: 80px; /* Adjust this value to create more space */
         }
         .login-container h1 {
             margin-bottom: 10px;
@@ -96,6 +101,49 @@
             color: red;
             margin-top: 10px;
         }
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: absolute;
+            bottom: 0;
+            background: #fff;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .marquee-heading {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .marquee-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        .marquee-item {
+            display: inline-block;
+            text-align: center;
+            margin: 0 15px;
+        }
+        .marquee-item img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            margin-bottom: 5px;
+        }
+        .marquee-item p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
     </style>
     <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -147,6 +195,52 @@
             <input type="submit" value="Login">
             <div class="error-message"></div>
         </form>
+    </div>
+    <div class="marquee-container">
+        <div class="marquee-heading">Our Coaching's Best Students</div>
+        <div class="marquee-content">
+            <div class="marquee-item">
+                <img src="https://i.imgur.com/OyIamx9.jpeg" alt="Topper 1">
+                <p>Omkar</p>
+            </div>
+            <div class="marquee-item">
+                <img src="https://imgur.com/her7rqW.jpeg" alt="Topper 2">
+                <p>Aman Singh</p>
+            </div>
+            <div class="marquee-item">
+                <img src="https://imgur.com/FksfNDi.jpeg" alt="Topper 3">
+                <p>Diwakar</p>
+            </div>
+            <div class="marquee-item">
+                <img src="https://imgur.com/SXV0N6t.jpeg" alt="Topper 4">
+                <p>Ashish</p>
+            </div>
+            <div class="marquee-item">
+                <img src="https://imgur.com/ukbLQJu.jpeg" alt="Topper 5">
+                <p>Deepak</p>
+            </div>
+            <div class="marquee-item">
+                <img src="https://imgur.com/ola1nma.jpeg" alt="Topper 6">
+                <p>Durga Kumari</p>
+            </div>
+            <div class="marquee-item">
+                <img src="https://imgur.com/9sd7ay6.jpeg" alt="Topper 7">
+                <p>Ravi Yadav</p>
+            </div>
+            <div class="marquee-item">
+                <img src="https://imgur.com/cfIohOf.jpeg" alt="Topper 8">
+                <p>Roshan</p>
+            </div>
+            <div class="marquee-item">
+                <img src="https://imgur.com/2UlmGAJ.jpeg" alt="Topper 9">
+                <p>Sandhya Kumari</p>
+            </div>
+            <div class="marquee-item">
+                <img src="https://imgur.com/eT8F8p8.jpeg" alt="Topper 10">
+                <p>Vikki Prasad</p>
+            </div>
+
+        </div>
     </div>
 </body>
 </html>
