@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Computer Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .header {
+            background: #333;
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+		background: linear-gradient(45deg, #003366, #009966);
+
+
+
+        }
+        .youtube-link-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        .youtube-link-bar input {
+            width: 300px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .play-button {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff6b6b, #f7d6d0);
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+        }
+        .play-button:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-left: 15px solid white;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            transform: translate(-50%, -50%);
+        }
+        .iframe-container {
+            text-align: center;
+            margin: 20px auto;
+        }
+        iframe {
+            width: 80%;
+            height: 450px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Core Computer Center</h2>
+    </div>
+    <div class="youtube-link-bar">
+        <input type="text" id="youtube-link" placeholder="Paste YouTube link here">
+        <div class="play-button" onclick="playVideo()"></div>
+    </div>
+    <div class="iframe-container">
+        <iframe id="video-frame" src="" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function playVideo() {
+            var link = document.getElementById('youtube-link').value;
+            var videoID = '';
+            
+            // Regex to extract video ID from different YouTube URL formats
+            var match = link.match(/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/)|youtu\.be\/|youtube\.com\/(?:v=|watch\?v=))([^"&?\/\s]{11})/);
+            
+            if (match && match[1]) {
+                videoID = match[1];
+            }
+
+            if (videoID) {
+                document.getElementById('video-frame').src = 'https://www.youtube.com/embed/' + videoID;
+            } else {
+                alert('Please enter a valid YouTube link.');
+            }
+        }
+    </script>
+</body>
+</html>
