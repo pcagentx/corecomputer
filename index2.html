@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Computer Center</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+	background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* Gradient background for the body */
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb); /* Gradient background for the header */
+            color: #fff;
+            text-align: center;
+            padding: 1px;
+	   z-index: 1000; /* Ensure header is on top */
+        }
+
+        .container {
+            margin-top: 70px; /* Adjust this to avoid overlap with the header */
+            padding: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 10px;
+            margin: 5px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 10; /* Ensure tabs are above content */
+        }
+
+        .tab-button:hover {
+            background-color: #FF6F61;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0px;
+        }
+
+
+.whatsapp-contact {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-contact a {
+    background-color: #25D366; /* WhatsApp green */
+    color: #fff;
+    width: 60px; /* Set width */
+    height: 60px; /* Set height */
+    border-radius: 50%; /* Makes it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.whatsapp-contact a:hover {
+    background-color: #128C7E; /* Darker WhatsApp green */
+}
+
+.whatsapp-contact i {
+    line-height: 1;
+}
+
+.disclaimer p {
+    margin: 10px;
+}
+        .address-bar {
+            margin-top: 10px;
+            font-size: 0.9em;
+}
+
+
+
+ .form-group {
+            margin-bottom: 40px;
+        }
+        
+  
+        #course-fee {
+            font-weight: bold;
+            color: #333;
+        }
+       
+.form-group label {
+            display: block;
+            margin-bottom: 16px;
+            font-weight: bold;
+            color: #555;
+        }
+
+    
+        .form-group input, .form-group select {
+            width: calc(100% - 16px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="file"] {
+            padding: 3px;
+
+
+.social-links img, .payment-links img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.social-links img:hover, .payment-links img:hover {
+    transform: scale(1.1);
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Core Computer Center - PcAgentX</h1>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button" onclick="showContent('tab1')">Home</button>
+            <button class="tab-button" onclick="showContent('tab2')">Course</button>
+            <button class="tab-button" onclick="showContent('tab3')">Dwonload Notes</button>
+            <button class="tab-button" onclick="showContent('tab4')">Books</button>
+            <button class="tab-button" onclick="showContent('tab5')">Certificate</button>
+            <button class="tab-button" onclick="showContent('tab6')">Admission</button>
+            <button class="tab-button" onclick="showContent('tab7')">Stock Market</button>
+            <button class="tab-button" onclick="showContent('tab8')">Youtube Premium</button>
+            <button class="tab-button" onclick="showContent('tab9')">Social Links</button>
+            <button class="tab-button" onclick="showContent('tab10')">Contact Us</button>
+        </div>
+
+        <div class="content">
+
+
+
+            <div id="tab1" class="tab-content">
+
+<div style="display: flex; align-items: center;">
+        <img src="https://imgur.com/ALGSZ4D.jpg" alt="Core Computer Center" style="width: 500px; height: auto; margin-right: 100px;">
+        <div>
+            <h1>PcAgentX</h1>
+            <p>Prepare for the Next Two Decades of India's Bull Market with Vivek Singhal</p>
+            <p>Embark on Your Journey with Our Expert Guidance.</p>
+            <button style="
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            " onmouseover="this.style.backgroundColor='#e52d27'" onmouseout="this.style.backgroundColor='#4CAF50'">Join Course</button>
+        </div>
+    </div>
+ 
+    </div>   
+
+ 
+
+            <div id="tab2" class="tab-content" style="text-align: center; margin-top: 20px;">
+<div class="form-group">
+            <label for="course">Select Course:</label>
+            <select id="course" name="course" required>
+                <option value="">Select Course</option>
+                <option value="adca">ADCA</option>
+                <option value="dca">DCA</option>
+                <option value="cca">CCA</option>
+                <option value="tally">Tally</option>
+                <option value="stock-market">Stock Market</option>
+            </select>
+        </div>
+        <div class="form-group">
+		<h1><label id="course-info" >Course Info: </label><br>
+            <label id="course-fee" >Course Fee: </label> </h1>
+        </div>
+
+</div>
+
+
+
+
+            <div id="tab9" class="tab-content" style="text-align: center; margin-top: 20px;">
+    <h2>Follow Us and Connect</h2>
+    <div class="social-links" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+        <a href="https://i.imgur.com/854eFhP.png" target="_blank" title="Facebook">
+            <img src="https://i.imgur.com/854eFhP.png" alt="Facebook" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <a href="https://imgur.com/4xoTy1o.png" target="_blank" title="Telegram">
+            <img src="https://imgur.com/4xoTy1o.png" alt="Telegram" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <a href="https://wa.me/919501442828" target="_blank" title="WhatsApp">
+            <img src="https://imgur.com/pnHiqKM.png" alt="WhatsApp" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <a href="https://www.youtube.com/@YourChannel" target="_blank" title="YouTube">
+            <img src="https://imgur.com/5MgtT1L.png" alt="YouTube" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <a href="https://twitter.com/YourTwitterHandle" target="_blank" title="Twitter">
+            <img src="https://imgur.com/RHXwIlE.png" alt="Twitter" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+    </div>
+    <h2>Make a Payment</h2>
+    <div class="payment-links" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+        <a href="https://payment-link-1.com" target="_blank" title="Payment Link 1">
+            <img src="https://imgur.com/4Vp0fqJ.jpeg" alt="Payment Link 1" style="width: 200px; height: auto; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+        <a href="https://payment-link-2.com" target="_blank" title="Payment Link 2">
+            <img src="https://imgur.com/KgRK0zS.jpeg" alt="Payment Link 2" style="width: 200px; height: 282px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        </a>
+    </div>
+
+</div>
+
+
+
+
+            <div id="tab4" class="tab-content">Content for Tab 4</div>
+
+            <div id="tab5" class="tab-content">Content for Tab 5</div>
+
+            <div id="tab6" class="tab-content">Content for Tab 6</div>
+
+            <div id="tab7" class="tab-content">Content for Tab 7</div>
+            <div id="tab8" class="tab-content">Content for Tab 8</div>
+            <div id="tab9" class="tab-content">Content for Tab 9</div>
+            <div id="tab10" class="tab-content">Content for Tab 10</div>
+        </div>
+    </div>
+
+
+<div class="whatsapp-contact">
+    <a href="https://wa.me/919501442828" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+
+    <footer>
+<div class="disclaimer">
+        <p>Address: Core Computer Center, Naniyapura, Twiningganj Station, 802111 </p> </div>
+    </footer>
+
+    <script>
+        function showContent(tabId) {
+            // Hide all tab content
+            var contents = document.querySelectorAll('.tab-content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+
+            // Show the selected tab content
+            var selectedContent = document.getElementById(tabId);
+            selectedContent.classList.add('active');
+        }
+
+        // Optionally, show the first tab by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showContent('tab1');
+        });
+    </script>
+
+
+<script>
+    const courseFees = {
+        adca: 7500,
+        dca: 4500,
+        cca: 2500,
+        tally: 3000,
+        "stock-market": 3500
+    };
+
+    const courseInfo = {
+        adca: "Advanced Diploma in Computer Applications.",
+        dca: "Diploma in Computer Applications.",
+        cca: "Certificate Course in Computing Applications.",
+        tally: "Tally Accounting Software Training.",
+        "stock-market": "Introduction to Stock Market and Trading."
+    };
+
+    document.getElementById('course').addEventListener('change', function () {
+        const selectedCourse = this.value;
+        const fee = courseFees[selectedCourse] || 'N/A';
+        const info = courseInfo[selectedCourse] || 'N/A';
+
+        document.getElementById('course-fee').textContent = `Course Fee: ₹${fee}`;
+        document.getElementById('course-info').textContent = `Course Info: ${info}`;
+    });
+
+    document.getElementById('registration-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Form submitted! This is where you would handle the form data.');
+        // Implement form submission logic here
+    });
+</script>
+
+
+</body>
+</html>
