@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Core Computer Center</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+	
+	
+	
+	
     body {
         font-family: Arial, sans-serif;
         margin: 0;
@@ -28,7 +33,7 @@
     .date-time {
         position: absolute;
         top: 18px;
-        right: 20px;
+        right: 25px;
         font-size: 14px;
         background: rgba(0, 0, 0, 0.7);
         color: #fff;
@@ -44,7 +49,37 @@
     .container {
         margin-top: 90px; /* Adjust this to avoid overlap with the header */
         padding: 10px;
+		 box-sizing: border-box; /* Include padding and border in element's total width and height */
     }
+	
+	
+	
+	 .content-container {
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Adjust the gap between image and text container if needed  */
+    }
+
+    .content-container img {
+        
+        margin-right: 20px; /* Adjust the right margin if needed */
+    } 
+
+    .content-container div {
+        margin: 0;
+    }
+
+    .content-container h1 {
+        margin: 0; /* Remove default margin for h1 */
+        padding: 0; /* Remove any default padding if needed */
+    }
+
+    .content-container p {
+        margin: 0; /* Remove default margin for paragraphs */
+        padding: 0; /* Remove any default padding if needed */
+    }
+	
+	
 
     .tabs {
         display: flex;
@@ -60,7 +95,7 @@
         border: 1px solid #ddd;
         border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, color 0.3s;
         z-index: 10; /* Ensure tabs are above content */
 		
     }
@@ -72,8 +107,9 @@
 
     .tab-content {
         display: none;
-        overflow: auto; /* Handle overflow */
+        overflow: auto; /* auto hidden Handle overflow */
         width: 100%; /* Ensure full width */
+		box-sizing: border-box; /* Include padding and border in element's total width and height */
     }
 
     .tab-content.active {
@@ -126,6 +162,38 @@
     .whatsapp-contact i {
         line-height: 1;
     }
+	
+	/* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px; /* Position from the bottom */
+            right: 1260px; /* Position from the right */
+            z-index: 1000;
+            font-size: 20px; /* Icon size */
+            color: #fff; /* Icon color */
+            background-color: #007bff; /* Button background color */
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .scroll-to-top.show {
+            display: block; /* Show button when scrolled down */
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .scroll-to-top i {
+            display: block;
+            text-align: center;
+        }
 
     .disclaimer p {
         margin: 10px;
@@ -135,21 +203,95 @@
         margin-top: 10px;
         font-size: 0.9em;
     }
+	
+	
+	
+/* Home tab */
+
+.gallery-container {position: relative;
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden; /* Hide overflow to ensure image fits container */
+        width: 500px; /* Fixed width for the container */
+        height: 400px; /
+    }
+
+    .gallery-image {
+        display: block;
+        width: 500px; /* 100% Make sure the image fits the container width */
+        height: 400px; /* AUTO Maintain aspect ratio */
+        max-height: 100%; /* Ensure image does not exceed container height */
+        object-fit: contain; /* Scale image to fit within container, keeping aspect ratio */
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: background-color 0.6s ease;
+        border-radius: 3px;
+        user-select: none;
+    }
+
+    .prev {
+        left: 0;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .next {
+        right: 0;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
 
     /* Course tab */
+	
     .form-group {
         margin-bottom: 20px;
     }
 
     #course-fee {
+	font-size: 30px; /* Adjust font size as needed */
         font-weight: bold;
         color: #333;
     }
 
     #course-info {
+	font-size: 30px; /* Adjust font size as needed */
         font-weight: bold;
         color: #333;
+
     }
+	
+	#course-duration {
+	font-size: 30px; /* Adjust font size as needed */
+        font-weight: bold;
+        color: #333; }
+		  /* Course tab */
+    .course-description {
+        color: blue; /* Blue color for Course Info label */
+    }
+
+    .fee-amount {
+        color: red; /* Red color for Fee Amount */
+    }
+	
+	 .duration-info {
+        font-size: 30px; /* Adjust font size as needed */
+        color: green; /* Green color for duration */
+        font-weight: bold; /* Make the text bold */
+    }
+	
 
     #course {
         width: 300px; /* Adjust width as needed */
@@ -185,6 +327,7 @@
     }
 
     /* Payment tab */
+	
     .social-links img, .payment-links img {
         width: 40px; /* Adjust size as needed */
         height: 40px; /* Adjust size as needed */
@@ -196,14 +339,7 @@
         transform: scale(1.1);
     }
 
-    /* Course tab */
-    .course-description {
-        color: blue; /* Blue color for Course Info label */
-    }
-
-    .fee-amount {
-        color: red; /* Red color for Fee Amount */
-    }
+  
 
     .gradient-text {
         background: linear-gradient(45deg, #4A00E0, #8E2DE2); /* Dark blue to purple */
@@ -320,7 +456,7 @@
 }
 
 .cta-button:hover {
-    background-color: #45a049;
+    background-color: #009B77;
 }
 
 	
@@ -399,14 +535,17 @@
 
 <!-- xxx - tab1 - home -->
 
-            <div id="tab1" class="tab-content">
-
-<div style="display: flex; align-items: center;">
-        <img src="https://imgur.com/ALGSZ4D.jpg" alt="Core Computer Center" style="width: 500px; height: auto; margin-right: 100px;">
+           <div id="tab1" class="tab-content">
+    <div class="content-container">
+        <div class="gallery-container">
+            <img class="gallery-image" src="https://imgur.com/ALGSZ4D.jpg" alt="Core Computer Center" id="galleryImage">
+            <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+            <a class="next" onclick="changeImage(1)">&#10095;</a>
+        </div>
         <div>
-            <h1 class="gradient-text">PcAgentX</h1>
+            <h1 class="gradient-text">PcAgentX</h1></br>
             <p>Prepare for the Next Two Decades of India's Bull Market with Vivek Singhal</p>
-            <p>Embark on Your Journey with Our Expert Guidance.</p>
+            <p>Embark on Your Journey with Our Expert Guidance.</p></br>
             <button style="
                 padding: 10px 20px;
                 background-color: #4CAF50;
@@ -418,37 +557,43 @@
             " onmouseover="this.style.backgroundColor='#e52d27'" onmouseout="this.style.backgroundColor='#4CAF50'">Join Course</button>
         </div>
     </div>
- 
-    </div>   
+</div>
+
+
+
+		   
 
  <!-- xxx - tab2 - course -->
 
-            <div id="tab2" class="tab-content" style="text-align: center; margin-top: 20px;">
-<div class="form-group">
-            <label for="course">Select Course:</label>
-            <select id="course" name="course" required>
-                <option value="">Select Course</option>
-                <option value="adca">ADCA</option>
-                <option value="dca">DCA</option>
-                <option value="cca">CCA</option>
-                <option value="tally">Tally</option>
-                <option value="stock-market">Stock Market</option>
-            </select>
+           <div id="tab2" class="tab-content" style="text-align: center; margin-top: 20px;">
+    <div class="form-group">
+        <label for="course">Select Course:</label>
+        <select id="course" name="course" required>
+            <option value="">Select Course</option>
+            <option value="adca">ADCA</option>
+            <option value="stock-market">Stock Market</option>
+            <option value="adca+">ADCA+</option>
+            <option value="computer-assemble">Computer Assemble</option>
+            <option value="dca">DCA</option>
+            <option value="cca">CCA</option>
+            <option value="typing">Typing</option>
+            <option value="tally">Tally</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <div>
+            <label id="course-info">Course Info: <span class="course-description" style="color: blue;"></span></label><br>
+            <label id="course-fee" style="font-weight: bold; color: #333;">Course Fee: <span class="fee-amount" style="color: red;">₹0</span></label><br>
+            <label id="course-duration" class="course-duration">Duration: <span class="duration-info">0 months</span></label>
         </div>
-        <div class="form-group">
-		<h1>
-            <label id="course-info">Course Info: <span class="course-description"  style="color: blue;"></span></label><br>
-            <label id="course-fee" style="font-weight: bold; color: #333;">Course Fee: <span class="fee-amount" style="color: red;">₹0</span></label>
-        </h1>
-        </div>
-
+    </div>
 </div>
 
 
  <!-- xxx - tab3 - dwonload notes -->
 
 <div id="tab3" class="tab-content" style="text-align: center; margin-top: 20px;">
-    <table style="width: 50%; margin: auto; border-collapse: collapse; text-align: center;">
+    <table style="width: 60%; margin: auto; border-collapse: collapse; text-align: center;">
         <thead>
             <tr>
                 <th colspan="3" style="border: 1px solid #ddd; padding: 10px; font-size: 24px; background-color: #f4f4f4;">Core Computer Center</th>
@@ -463,52 +608,52 @@
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">1</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">Windows Basics</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/windows-basics.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1zjuwUdPZPatEwAe_Nn0mMQP-mSj3cfCx/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">2</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">MS Word</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/ms-word-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/18d94dobjODGjjV21Ly7wsjFYeafJPK9K/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">3</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">Excel</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/excel-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1FSw3tqQGdh6aU1AMj3vX0xIF8OsbyeYb/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">4</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">PowerPoint</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/powerpoint-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1OZPOsVw5evyYBRVSBEZREZ5cf9VaCZBp/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">5</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">MS Access</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/ms-access-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1EPSmI_OLpvf_Gko2ujGmKMpAvuylEvU8/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">6</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">HTML</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/html-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/uc?export=download&id=1zSxCSAxVDW96Cn0I4Ft0SFDotjDfl4JN" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">7</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">Internet Basics</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/internet-basics.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1PkxwRW1io5VEO6dLAyy6ME5JDXmf9uQV/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">8</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">PageMaker</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/pagemaker-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1qdJB5-aAHQmGRw0vPL-6I1lzr2IIllEk/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">9</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">CorelDraw</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/coreldraw-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1pSoPizZH4zF25zvtiLWpUp4YOlqwrEXd/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">10</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">Photoshop</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/photoshop-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1UT9g7tiu7hANc6bUXBdjyHFrE3MhcD1s/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">11</td>
@@ -518,7 +663,7 @@
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">12</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">Tally Accounting</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/tally-accounting-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1RcevQVgvOQNS2KnYkzG5J8GhWklkD1-B/view?usp=sharing" download>Download Now</a></td>
             </tr>
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">13</td>
@@ -533,7 +678,7 @@
             <tr>
                 <td style="border: 1px solid #ddd; padding: 8px;">15</td>
                 <td style="border: 1px solid #ddd; padding: 8px;">Tips & Tricks</td>
-                <td style="border: 1px solid #ddd; padding: 8px;"><a href="path/to/tips-tricks-notes.pdf" download>Download Now</a></td>
+                <td style="border: 1px solid #ddd; padding: 8px;"><a href="https://drive.google.com/file/d/1EgwP9bpLa7t2SFiGlIRMVIuRmA3EmNVZ/view?usp=sharing" download>Download Now</a></td>
             </tr>
         </tbody>
     </table>
@@ -547,10 +692,10 @@
  <!-- xxx - tab4 - financial books -->
 
 <div id="tab4" class="tab-content" style="margin-top: 20px; text-align: center;">
-    <table style="width: 100%; border-collapse: collapse; border: 2px solid white;">
+    <table style="width: 100%; border-collapse: collapse; border: 2px solid white; overflow: auto;">
         <!-- First Row -->
         <tr>
-            <td style="border: 2px solid white; padding: 5px;">
+            <td style="border: 2px solid white; padding: 5px; ">
                 <div>
                     <h3>Heading 1</h3>
                     <img src="https://imgur.com/Y44H5tj.jpeg" alt="Image 1" style="width: 100%; height: auto;">
@@ -680,7 +825,7 @@
                 </div>
             </td>
         </tr>
-    </table>
+    </table> 
 </div>
 
           
@@ -707,44 +852,44 @@
 			
 			<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
     <div style="text-align: center;">
-        <img src="https://i.imgur.com/OyIamx9.jpeg" alt="PC Build 1" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 1</p>
+        <img src="https://imgur.com/pBNFk3l.jpeg" alt="PC Build 1" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">Motherboard</p>
     </div>
     <div style="text-align: center;">
-        <img src="https://imgur.com/her7rqW.jpeg" alt="PC Build 2" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 2</p>
+        <img src="https://imgur.com/SgayejG.jpeg" alt="PC Build 2" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">processors</p>
     </div>
     <div style="text-align: center;">
-        <img src="https://imgur.com/FksfNDi.jpeg" alt="PC Build 3" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 3</p>
+        <img src="https://imgur.com/b94SVMq.jpeg" alt="PC Build 3" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">Rams</p>
     </div>
     <div style="text-align: center;">
-        <img src="https://imgur.com/SXV0N6t.jpeg" alt="PC Build 4" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 4</p>
+        <img src="https://i.imgur.com/iavPT9O.jpg" alt="PC Build 4" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">Cabinets</p>
     </div>
     <div style="text-align: center;">
-        <img src="https://imgur.com/ukbLQJu.jpeg" alt="PC Build 5" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 5</p>
+        <img src="https://imgur.com/EkYvC0I.jpeg" alt="PC Build 5" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">Monitors</p>
     </div>
     <div style="text-align: center;">
-        <img src="https://imgur.com/ola1nma.jpeg" alt="PC Build 6" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 6</p>
+        <img src="https://imgur.com/xtNwtBe.jpeg" alt="PC Build 6" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">keyboards</p>
     </div>
     <div style="text-align: center;">
-        <img src="https://imgur.com/9sd7ay6.jpeg" alt="PC Build 7" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 7</p>
+        <img src="https://imgur.com/H1QBqxn.jpeg" alt="PC Build 7" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">Mouse</p>
     </div>
     <div style="text-align: center;">
-        <img src="https://imgur.com/cfIohOf.jpeg" alt="PC Build 8" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 8</p>
+        <img src="https://imgur.com/Alx0TRA.jpeg" alt="PC Build 8" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">SMPS</p>
     </div>
     <div style="text-align: center;">
-        <img src="https://imgur.com/2UlmGAJ.jpeg" alt="PC Build 9" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 9</p>
+        <img src="https://imgur.com/kNqkQUF.jpeg" alt="PC Build 9" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">SSD</p>
     </div>
     <div style="text-align: center;">
-        <img src="https://imgur.com/eT8F8p8.jpeg" alt="PC Build 10" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
-        <p style="margin-top: 10px; font-size: 14px; color: #333;">PC Build 10</p>
+        <img src="https://imgur.com/S3YiSvi.jpeg" alt="PC Build 10" style="width: 100px; height: 100px; border-radius: 50%; border: 2px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <p style="margin-top: 10px; font-size: 14px; color: #333;">Graphic Card</p>
     </div>
 </div>
 
@@ -754,9 +899,9 @@
 			
     <!-- English Content -->
     <div class="section" id="english-content">
-        <h1>PC Build</h1>
-        <h2>Welcome to our PC Build section!</h2>
-        <p>At Core Computer Center, we specialize in building customized desktop computers tailored to your needs. Whether you need a computer for home, office, school, or business purposes, we offer a range of options from Intel i3 to i5 and i7 processors. Each build is designed to deliver optimal performance based on your requirements.</p>
+       <Center> <h1>PC Build</h1>
+        <h2>Welcome to our PC Build section!</h2> 
+        <p>At Core Computer Center, we specialize in building customized desktop computers tailored to your needs. Whether you need a computer for home, office, school, or business purposes, we offer a range of options from Intel i3 to i5 and i7 processors. Each build is designed to deliver optimal performance based on your requirements.</p> </Center>
         <p><strong>Our Services Include:</strong></p>
         <ul>
             <li><strong>Custom Desktop Builds:</strong> We build PCs with Intel i3, i5, and i7 processors, ensuring the best performance for your tasks.</li>
@@ -844,7 +989,7 @@
         <div class="call-to-action">
             <h2>Ready to Start?</h2>
             <p>Join our course today and take the first step towards financial freedom!</p>
-            <button onclick="location.href='signup.html'" class="cta-button">Enroll Now</button>
+            <button onclick="https://join.dhan.co/?invite=MNSDX83789'" class="cta-button">Enroll Now</button>
         </div>
     </div>
 </div>
@@ -875,19 +1020,19 @@
  <div id="tab9" class="tab-content" style="text-align: center; margin-top: 20px;">
     <h2>Follow Us and Connect</h2>
     <div class="social-links" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
-        <a href="https://i.imgur.com/854eFhP.png" target="_blank" title="Facebook">
+        <a href="https://www.facebook.com/CoreComputerLab" target="_blank" title="Facebook">
             <img src="https://i.imgur.com/854eFhP.png" alt="Facebook" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
         </a>
-        <a href="https://imgur.com/4xoTy1o.png" target="_blank" title="Telegram">
+        <a href="https://t.me/pcagentx" target="_blank" title="Telegram">
             <img src="https://imgur.com/4xoTy1o.png" alt="Telegram" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
         </a>
         <a href="https://wa.me/919501442828" target="_blank" title="WhatsApp">
             <img src="https://imgur.com/pnHiqKM.png" alt="WhatsApp" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
         </a>
-        <a href="https://www.youtube.com/@YourChannel" target="_blank" title="YouTube">
+        <a href="https://www.youtube.com/@pcagentx" target="_blank" title="YouTube">
             <img src="https://imgur.com/5MgtT1L.png" alt="YouTube" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
         </a>
-        <a href="https://twitter.com/YourTwitterHandle" target="_blank" title="Twitter">
+        <a href="https://x.com/pcagentx" target="_blank" title="Twitter">
             <img src="https://imgur.com/RHXwIlE.png" alt="Twitter" style="width: 40px; height: 40px; border-radius: 5px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.5)'" onmouseout="this.style.transform='scale(1)'">
         </a>
     </div>
@@ -993,7 +1138,11 @@
 
 
   </div> </div>  
-
+  
+  
+<div class="scroll-to-top" id="scroll-to-top">
+        <i class="fas fa-arrow-up">  </i>
+    </div>
 
 <div class="whatsapp-contact">
     <a href="https://wa.me/919501442828" target="_blank" title="Chat with us on WhatsApp">
@@ -1024,13 +1173,40 @@
             showContent('tab1');
         });
   </script>
+
+
 <script>
 const courseFees = {
-    adca: 7500,
+    adca: 6500,
+    "stock-market": 5000,
+    "adca+": 12500,
+    "computer-assemble": 3500,
     dca: 4500,
     cca: 2500,
-    tally: 3000,
-    "stock-market": 3500
+    tally: 8000,
+    typing: 400 
+};
+
+const courseDescriptions = {
+    adca: 'Advanced Diploma in Computer Applications',
+    "stock-market": 'Trading in Stock Market',
+    "adca+": 'Advanced Diploma in Computer Applications Plus',
+    "computer-assemble": 'Computer Assemble & Troubleshooting',
+    dca: 'Diploma in Computer Applications',
+    cca: 'Certificate in Computer Applications',
+    typing: 'Typing English & Hindi (Monthly)',
+    tally: 'Tally Accounting Course'
+};
+
+const courseDurations = {
+    adca: '12 months',
+    "stock-market": '6 months',
+    "adca+": '18 months',
+    "computer-assemble": '3 months',
+    dca: '6 months',
+    cca: '3 months',
+    typing: '6 months',
+    tally: '6 months'
 };
 
 document.getElementById('course').addEventListener('change', function () {
@@ -1038,15 +1214,11 @@ document.getElementById('course').addEventListener('change', function () {
     const fee = courseFees[selectedCourse] || 'N/A';
     document.querySelector('#course-fee .fee-amount').textContent = `₹${fee}`;
 
-    const courseDescriptions = {
-        adca: 'Advanced Diploma in Computer Applications',
-        dca: 'Diploma in Computer Applications',
-        cca: 'Certificate in Computer Applications',
-        tally: '<span style="color: blue;">Tally Accounting Course</span>',
-        "stock-market": 'Stock Market Basics and Advanced Strategies'
-    };
+    const description = courseDescriptions[selectedCourse] || 'Select a course to see details';
+    document.querySelector('#course-info .course-description').innerHTML = description;
 
-    document.querySelector('#course-info .course-description').innerHTML = courseDescriptions[selectedCourse] || 'Select a course to see details';
+    const duration = courseDurations[selectedCourse] || 'N/A';
+    document.querySelector('#course-duration .duration-info').textContent = duration;
 });
 
 // Optionally, show default course info and fee on page load
@@ -1055,6 +1227,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 </script>
+
+
+
+
+
+
+
 
 <script>
         let slideIndex = 0;
@@ -1116,6 +1295,60 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 	
 	
+	
+	<script>
+	const images = [
+	"https://imgur.com/u02jeTG.jpeg",
+	"https://imgur.com/fhbUyfp.jpeg",
+	"https://imgur.com/ESLS2Qd.jpeg",
+	"https://imgur.com/DAiYcVP.jpeg",
+	"https://imgur.com/M68k4MQ.jpeg",
+	"https://imgur.com/2FLffjf.jpeg",
+	
+    "https://imgur.com/JOKtbQI.jpeg",
+    "https://imgur.com/Ik3RLv7.jpeg",
+	
+    "https://imgur.com/u02jeTG.jpeg"
+];
+
+let currentIndex = 0;
+
+function showImage(index) {
+    const imgElement = document.getElementById('galleryImage');
+    imgElement.src = images[index];
+}
+
+function changeImage(step) {
+    currentIndex = (currentIndex + step + images.length) % images.length;
+    showImage(currentIndex);
+}
+
+// Initialize the gallery with the first image
+document.addEventListener('DOMContentLoaded', function() {
+    showImage(currentIndex);
+});
+
+	
+	
+	
+	</script>
+	
+	<script>
+        // Show or hide the button based on scroll position
+        window.addEventListener('scroll', function() {
+            const button = document.getElementById('scroll-to-top');
+            if (window.scrollY > 5) { // Show button after scrolling down 300px
+                button.classList.add('show');
+            } else {
+                button.classList.remove('show');
+            }
+        });
+
+        // Scroll to the top when the button is clicked
+        document.getElementById('scroll-to-top').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 	
 	
 	
